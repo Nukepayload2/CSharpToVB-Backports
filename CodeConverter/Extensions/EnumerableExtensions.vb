@@ -7,7 +7,7 @@ Imports System.Runtime.CompilerServices
 Public Module EnumerableExtensions
 
     Private Function ContainsTypeName(inStr As String, target As String, comparison As StringComparison) As Boolean
-        Dim s As String = inStr.Split(".").LastOrDefault()
+        Dim s As String = inStr.Split("."c).LastOrDefault()
         Return s.Equals(target, comparison)
     End Function
 

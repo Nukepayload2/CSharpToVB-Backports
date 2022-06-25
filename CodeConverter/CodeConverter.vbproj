@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace></RootNamespace>
-    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <TargetFrameworks>net6.0;net472</TargetFrameworks>
     <OptionCompare>Text</OptionCompare>
     <OptionExplicit>On</OptionExplicit>
     <OptionInfer>On</OptionInfer>
@@ -21,7 +21,7 @@
     <FileVersion>5.0.2.10</FileVersion>
     <Version>5.0.2.10</Version>
     <Copyright>Copyright (c) .NET Foundation and Contributors</Copyright>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <!--<EnableNETAnalyzers>true</EnableNETAnalyzers>-->
     <PackageLicenseFile>License.txt</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
@@ -46,5 +46,8 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net6.0'">
+    <Compile Remove="**\*.Backport.vb" />
   </ItemGroup>
 </Project>

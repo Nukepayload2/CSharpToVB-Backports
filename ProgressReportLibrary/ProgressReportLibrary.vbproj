@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>ProgressReportLibrary</RootNamespace>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net472</TargetFrameworks>
     <Authors>Paul M Cohen</Authors>
     <Company>Travel by Paul</Company>
     <Copyright>Copyright (c) .NET Foundation and Contributors</Copyright>
@@ -27,4 +27,7 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)'=='net6.0'">
+    <Compile Remove="*.Backport.vb"/>
+  </ItemGroup>
 </Project>
